@@ -6,7 +6,7 @@ import CheckFeatures from "@/components/check-features.component.vue";
 
 export default {
   name: "home-content",
-  components: {Hero, CheckFeatures, ProductsContent, PresentationContent},
+  components: { CheckFeatures, ProductsContent, PresentationContent},
 }
 </script>
 

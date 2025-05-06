@@ -1,10 +1,12 @@
 <script>
 import PresentationContent from "@/components/presentation-content.component.vue";
 import ProductsContent from "@/components/products-content.component.vue";
+import CheckFeatures from "@/components/check-features.component.vue";
+
 
 export default {
   name: "home-content",
-  components: {ProductsContent, PresentationContent}
+  components: {Hero, CheckFeatures, ProductsContent, PresentationContent},
 }
 </script>
 
@@ -13,19 +15,22 @@ export default {
     <presentation-content></presentation-content>
   </section>
 
+
   <section id="products">
     <products-content></products-content>
   </section>
 
-  <section id="personalizacion">
-
+  <section id="check-features">
+    <check-features></check-features>
   </section>
 
-  <section id="contacto">
+  <section id="contacts">
 
   </section>
 </template>
 
 <style scoped>
-
+section {
+  border: 1px solid red;
+}
 </style>

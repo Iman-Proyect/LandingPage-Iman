@@ -16,12 +16,17 @@ const router = createRouter({
     routes,
     scrollBehavior(to) {
         if (to.hash) {
-            return {
-                el: to.hash,
-                behavior: 'smooth'
+            const header = document.querySelector("header");
+            const headerHeight = header ? header.offsetHeight : 0;
+            const target = document.querySelector(to.hash);
+
+            if (target) {
+                const top = target.offsetTop - headerHeight;
+                // Devuelve el desplazamiento con la propiedad `top`
+                return { top, behavior: 'smooth' };
             }
         }
-        return { top: 0 }
+        return { top: 0 }; // Si no hay hash, devuelve la posición inicial
     }
 })
 

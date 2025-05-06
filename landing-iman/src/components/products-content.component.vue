@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-  <section id="productos" class="products-section">
+  <section id="products" class="products-section">
     <h2>¿Por qué elegir nuestros imanes?</h2>
 
     <ul class="benefits">

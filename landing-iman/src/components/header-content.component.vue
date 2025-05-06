@@ -39,10 +39,10 @@ export default {
       </button>
 
       <nav :class="['nav', { open: isMenuOpen }]">
-        <router-link @click="closeMenu" :to="{ path: '/', hash: '#inicio' }">Inicio</router-link>
-        <router-link @click="closeMenu" :to="{ path: '/', hash: '#productos' }">Productos</router-link>
-        <router-link @click="closeMenu" :to="{ path: '/', hash: '#personalizacion' }">Personalización</router-link>
-        <router-link @click="closeMenu" :to="{ path: '/', hash: '#contacto' }">Contacto</router-link>
+        <router-link @click="closeMenu" :to="{ path: '/', hash: '#presentation' }">Inicio</router-link>
+        <router-link @click="closeMenu" :to="{ path: '/', hash: '#products' }">Productos</router-link>
+        <router-link @click="closeMenu" :to="{ path: '/', hash: '#check-features' }">Personalización</router-link>
+        <router-link @click="closeMenu" :to="{ path: '/', hash: '#contacts' }">Contacto</router-link>
       </nav>
     </div>
   </header>
@@ -60,7 +60,13 @@ a {
 }
 
 .header {
-  background-color: #f5f5f5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* asegúrate de que esté por encima del resto */
+  background-color: white; /* importante para que no sea transparente */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* opcional, para un efecto bonito */
   border-bottom: 1px solid #ddd;
 }
 .container {

@@ -21,6 +21,7 @@ export default {
       <img src="@/assets/download.jpg" alt="Imagen de presentación" />
     </div>
   </section>
+
 </template>
 
 <style scoped>
@@ -28,10 +29,11 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4rem;
+  padding: 100px 4rem 4rem 4rem; /* top, right, bottom, left */
   background-color: #f8f8f8;
   gap: 2rem; /* Añade espacio entre la imagen y el contenido */
   flex-wrap: wrap; /* Asegura que el contenido y la imagen se ajusten cuando el tamaño de la pantalla cambie */
+
 }
 
 .presentation-content {

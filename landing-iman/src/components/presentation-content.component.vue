@@ -33,7 +33,7 @@ export default {
   background-color: #f8f8f8;
   gap: 2rem; /* Añade espacio entre la imagen y el contenido */
   flex-wrap: wrap; /* Asegura que el contenido y la imagen se ajusten cuando el tamaño de la pantalla cambie */
-
+  background-image: url('@/assets/calendar-back.png'); /* tu imagen de fondo */
 }
 
 .presentation-content {

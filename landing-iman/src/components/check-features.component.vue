@@ -16,14 +16,6 @@ export default {
       </div>
     </div>
 
-    <div class="features-highlight reverse">
-      <img src="../assets/calendario.png" alt="Calendario inteligente" />
-      <div class="features-info">
-        <h3>Calendario inteligente de fechas especiales</h3>
-        <p>Sube las fechas de cumpleaños y fotos asociadas. Nosotros imprimimos el imán perfecto y lo enviamos justo a tiempo, sin que lo recuerdes.</p>
-      </div>
-    </div>
-
     <div class="extra-features">
       <h3>Y mucho más...</h3>
       <ul>

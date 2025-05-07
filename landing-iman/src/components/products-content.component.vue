@@ -1,6 +1,23 @@
 <script>
+import ProductList from "@/components/product-list.component.vue";
+import {products} from "@/data/products.js";
+
 export default {
-  name: "products-content"
+  name: "products-content",
+  components: {ProductList},
+  data() {
+    return {
+      products: []
+    }
+  },
+  created() {
+    this.getProducts();
+  },
+  methods: {
+    getProducts() {
+      this.products = products;
+    },
+  }
 }
 </script>
 
@@ -8,24 +25,23 @@ export default {
   <section id="products" class="products-section">
     <h2>¿Por qué elegir nuestros imanes?</h2>
 
-    <ul class="benefits">
-      <li>📸 Personalización total con tus fotos</li>
-      <li>🎁 Ideal para regalos únicos</li>
-      <li>🧲 Alta calidad y durabilidad</li>
-      <li>🚚 Envíos rápidos y seguros</li>
-    </ul>
+    <!-- <ul class="benefits">
+       <li>📸 Personalización total con tus fotos</li>
+       <li>🎁 Ideal para regalos únicos</li>
+       <li>🧲 Alta calidad y durabilidad</li>
+       <li>🚚 Envíos rápidos y seguros</li>
+     </ul>-->
 
-    <div class="magnet-gallery">
-      <div class="magnet-item" v-for="n in 6" :key="n">
-        <img :src="`/assets/imanes/iman${n}.jpg`" alt="Imán personalizado" />
-        <p>Diseño #{{ n }}</p>
-      </div>
-    </div>
+
+      <product-list :products="products"></product-list>
+
   </section>
 
 </template>
 
 <style scoped>
+
+
 .products-section {
   padding: 3rem 2rem;
   text-align: center;

@@ -31,17 +31,23 @@ export default {
 <template>
   <header class="header">
     <div class="container">
-      <!-- Botón hamburguesa (solo visible en móvil) -->
-      <div class="spacer"></div>
 
+      <!-- Logo -->
+      <div class="logo">
+        <img src="@/assets/logo.svg" alt="Logo" />
+      </div>
+
+      <!-- Botón hamburguesa (solo visible en móvil) -->
       <button class="hamburger" @click="toggleMenu">
         ☰
       </button>
 
+      <!-- Navegación -->
       <nav :class="['nav', { open: isMenuOpen }]">
         <router-link @click="closeMenu" :to="{ path: '/', hash: '#presentation' }">Inicio</router-link>
         <router-link @click="closeMenu" :to="{ path: '/', hash: '#products' }">Productos</router-link>
         <router-link @click="closeMenu" :to="{ path: '/', hash: '#check-features' }">Personalización</router-link>
+        <router-link @click="closeMenu" :to="{ path: '/', hash: '#calendar' }">Agenda</router-link>
         <router-link @click="closeMenu" :to="{ path: '/', hash: '#contacts' }">Contacto</router-link>
       </nav>
     </div>
@@ -49,14 +55,26 @@ export default {
 </template>
 
 <style scoped>
-nav {
+.nav {
   display: flex;
-  gap: 1rem;
+  flex: 1;
+  gap: 2rem;
   padding: 1rem;
+  justify-content: flex-start; /* Links alineados a la izquierda */
 }
 a {
   text-decoration: none;
   color: #333;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 60px;
+  height: auto;
 }
 
 .header {
@@ -68,10 +86,12 @@ a {
   background-color: white; /* importante para que no sea transparente */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* opcional, para un efecto bonito */
   border-bottom: 1px solid #ddd;
+  padding: 0rem 2rem 0rem 2.1rem;
 }
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  gap: 18rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -83,10 +103,10 @@ a {
 .hamburger {
   min-width: 55px;
   font-size: 1.5rem;
-  background: lightpink;
+  background: none;
   border: none;
   display: none; /* oculto en desktop */
-  padding: 0.95rem 1.35rem;
+  padding: 0.45rem 0.23rem;
 }
 .nav a {
   text-decoration: none;
@@ -102,6 +122,21 @@ a {
   background: white;
   padding: 1rem;
   border: 1px solid #ccc;
+  width: 200px; /* Ajusta el ancho según tu diseño */
+  max-height: calc(100vh - 40px); /* Altura máxima dinámica según la pantalla */
+  overflow-y: auto; /* Muestra la barra solo si es necesario */
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
+
+/* Estilo para Chrome, Edge y Safari */
+.nav.open::-webkit-scrollbar {
+  width: 8px;
+}
+
+.nav.open::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
 }
 
 /* Estilos responsive */

@@ -20,6 +20,5 @@ export default {
 <style scoped>
 section {
   padding: 0 1rem 4rem 1rem; /* solo padding abajo */
-  border-bottom: 1px solid #ddd;
 }
 </style>

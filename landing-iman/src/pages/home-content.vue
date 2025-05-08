@@ -12,7 +12,7 @@ export default {
 </script>
 
 <template>
-  <section id="presentation">
+  <section id="presentation" class="presentation-content">
     <presentation-content></presentation-content>
   </section>
 
@@ -37,6 +37,7 @@ export default {
 <style scoped>
 
 section {
-  //border: 1px solid red;
+  /*border: 1px solid red;*/
+  box-sizing: border-box; /* Incluye el padding en el ancho */
 }
 </style>

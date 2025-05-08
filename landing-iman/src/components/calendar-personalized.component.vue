@@ -31,6 +31,7 @@ export default {
 <style scoped>
 
 .calendar {
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -38,7 +39,11 @@ export default {
   background-color: white;
   gap: 0rem; /* Añade espacio entre la imagen y el contenido */
   flex-wrap: wrap; /* Asegura que el contenido y la imagen se ajusten cuando el tamaño de la pantalla cambie */
-  background-image: url('@/assets/calendar-back.png'); /* tu imagen de fondo */
+  position: relative;
+  width: 100%;
+  max-width: 1550px;
+  margin: 0 auto; /* Importante para tener margenes hasta el limite lateral de la pantalla, y asegurarse de que en los commponentes padres no hay limitaciones de max-widht */
+  z-index: 1; /* Por encima del background */
 }
 
 .calendar-content {
@@ -46,38 +51,14 @@ export default {
   flex: 1; /* Se adapta al espacio disponible */
   padding: 6rem 6rem 6rem 9rem;
   position: relative;
-  overflow: hidden; /* Para que no sobresalga el difuminado */
+
 }
 
 .calendar-content .content-wrapper {
   position: relative;
-  z-index: 2; /* Por encima del difuminado */
+
 }
 
-/* Difuminado escalado */
-.calendar::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right,
-  rgba(255, 255, 255, 0) 0%,
-  rgba(255, 255, 255, 0) 10%,
-  rgba(255, 255, 255, 0) 20%,
-  rgba(255, 255, 255, 0) 30%,
-  rgba(255, 255, 255, 0) 40%,
-  rgba(255, 255, 255, 0) 50%,
-  rgba(255, 255, 255, 0) 60%,
-  rgba(255, 255, 255, 0) 70%,
-  rgba(255, 255, 255, 0) 80%,
-  rgba(255, 255, 255, 0) 90%,
-  rgba(255, 255, 255, 0) 95%,
-  rgba(255, 255, 255, 0) 100%);
-  z-index: 1; /* Debajo del contenido */
-  pointer-events: none; /* para evitar que interfiera con los clicks */
-}
 
 .calendar h1 {
   font-size: 3rem;
@@ -101,8 +82,10 @@ export default {
 }
 
 .calendar-image {
+  position: relative;
   flex: 1; /* ocupa todo el espacio disponible */
   height: 100%; /* o una altura fija si prefieres */
+  z-index: 2; /* Por encima del difuminado */
 }
 
 .calendar-image img {

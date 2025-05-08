@@ -30,5 +30,9 @@ export default {
 </template>
 
 <style scoped>
+.features-section{
 
+  max-width: 1550px;
+  margin: 0 auto; /* Importante para tener margenes hasta el limite lateral de la pantalla, y asegurarse de que en los commponentes padres no hay limitaciones de max-widht */
+}
 </style>

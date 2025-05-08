@@ -3,14 +3,17 @@ export default {
   name: 'header-content',
   data() {
     return {
-      isMenuOpen: false
+      isMenuOpen: false,
+      isScrolled: false,
     }
   },
   mounted() {
     window.addEventListener('resize', this.handleResize);
+    window.addEventListener("scroll", this.handleScroll);
   },
   beforeUnmount() {
     window.removeEventListener('resize', this.handleResize);
+    window.removeEventListener("scroll", this.handleScroll);
   },
   methods: {
     toggleMenu() {
@@ -23,13 +26,16 @@ export default {
       if (window.innerWidth > 1000 && this.isMenuOpen) {
         this.closeMenu();
       }
+    },
+    handleScroll() {
+      this.isScrolled = window.scrollY > 50;
     }
   }
 }
 </script>
 
 <template>
-  <header class="header">
+  <header :class="['header', { 'scrolled': isScrolled }]">
     <div class="container">
 
       <!-- Logo -->
@@ -55,78 +61,102 @@ export default {
 </template>
 
 <style scoped>
+
+
 .nav {
   display: flex;
   flex: 1;
-  gap: 2rem;
-  padding: 1rem;
+  gap: 2.3rem;
+  padding: 1rem 1rem 1rem 3rem;
   justify-content: flex-start; /* Links alineados a la izquierda */
+
 }
+
 a {
   text-decoration: none;
-  color: #333;
+  color: #ffffff;
 }
 
 .logo {
+  height: 75px;
+  width: 75px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  gap: 18rem;
   display: flex;
-  align-items: center;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center;     /* Centra verticalmente */
+         /* O ajusta la altura según necesites */
 }
 
 .logo img {
-  width: 60px;
+  width: 50px;
   height: auto;
 }
 
 .header {
+  overflow: hidden;
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0; /* Se queda pegado al tope al hacer scroll */
   width: 100%;
   z-index: 1000; /* asegúrate de que esté por encima del resto */
-  background-color: white; /* importante para que no sea transparente */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* opcional, para un efecto bonito */
-  border-bottom: 1px solid #ddd;
-  padding: 0rem 2rem 0rem 2.1rem;
-}
-.container {
-  max-width: 1200px;
+  background-color: transparent; /* importante para que no sea transparente */
+  transition: background-color 0.09s ease, transform 0.09s ease;
   margin: 0 auto;
-  gap: 18rem;
+}
+
+.container {
   display: flex;
+  width: 100%;
+  height: 100%;
+  max-width: 1500px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; /* Distribuye espacio uniformemente */
+  margin: 0 auto; /* Centro horizontal */
+  background-color: transparent;
+  padding: 0 20px 0 20px ;
 }
-.logo {
-  font-weight: bold;
-  font-size: 1.5rem;
+
+.header.scrolled {
+  background-color: #014e4c;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
 }
+
+
 .hamburger {
   min-width: 55px;
-  font-size: 1.5rem;
+  font-size: 2rem;
   background: none;
   border: none;
   display: none; /* oculto en desktop */
-  padding: 0.45rem 0.23rem;
+  color: #ffffff;
 }
 .nav a {
   text-decoration: none;
-  color: #333;
+  color: rgb(255, 255, 255);
 }
+
+.nav.open a {
+  color: black; /* Cambia este color por el que desees */
+}
+
 .nav.open {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  position: absolute;
+  position: fixed;
   top: 60px;
   right: 1rem;
   background: white;
-  padding: 1rem;
-  border: 1px solid #ccc;
+  padding: 1rem 1rem 1rem 1rem;
   width: 200px; /* Ajusta el ancho según tu diseño */
   max-height: calc(100vh - 40px); /* Altura máxima dinámica según la pantalla */
   overflow-y: auto; /* Muestra la barra solo si es necesario */
   scrollbar-width: thin;
   scrollbar-color: #ccc transparent;
+  justify-content: flex-start;
+  z-index: 9999; /* asegúrate de que esté por encima del resto */
 }
 
 /* Estilo para Chrome, Edge y Safari */
@@ -147,5 +177,34 @@ a {
   .nav {
     display: none; /* oculto por defecto */
   }
+  .header{
+    height: 80px;
+    background-color: #014e4c;
+  }
 }
+
+@media (max-width: 756px) {
+  .header{
+    height: 54px;
+  }
+
+  .hamburger {
+    height: 100%;
+  }
+}
+
+@media (max-width: 590px) {
+  .logo {
+    margin-right: 2rem;
+  }
+
+}
+
+@media (max-width: 473px) {
+  .header {
+    padding: 0.35rem 1.4rem 0rem 2.1rem;
+  }
+
+}
+
 </style>

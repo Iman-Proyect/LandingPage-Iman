@@ -12,29 +12,61 @@ export default {
 
 <template>
   <section class="presentation">
-    <div class="presentation-content">
-      <h1>¡Bienvenidos a Nuestro Servicio de Imanes Personalizados!</h1>
-      <p>Transforma tus recuerdos en regalos únicos y especiales. Personaliza tus imanes con tus fotos favoritas.</p>
-      <button @click="goToShop">¡Compra Ahora!</button>
-    </div>
-    <div class="presentation-image">
-      <img src="@/assets/download.jpg" alt="Imagen de presentación" />
+    <div class="content-wrapper">
+        <div class="presentation-content">
+          <h1>¡Bienvenidos a Nuestro Servicio de Imanes Personalizados!</h1>
+          <p>Transforma tus recuerdos en regalos únicos y especiales. Personaliza tus imanes con tus fotos favoritas.</p>
+          <button @click="goToShop">¡Compra Ahora!</button>
+        </div>
+        <video
+            class="hero-video"
+            data-lazy-load="true"
+            data-src="https://s3.amazonaws.com/webflow-prod-assets/5e481500baff8f1b46a42ced/65e73b626bef9cff35de090c_Desktop.mp4"
+            poster="https://cdn.prod.website-files.com/5e481500baff8f1b46a42ced/6624f91dd7c146d7246fe3c0_Main%20(00000)%201%20(3)-min.png"
+            autoplay
+            loop
+            muted
+            playsinline
+        >
+          Your browser does not support the video tag.
+        </video>
     </div>
   </section>
 
 </template>
 
 <style scoped>
+
 .presentation {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 100px 4rem 4rem 4rem; /* top, right, bottom, left */
-  background-color: #f8f8f8;
+  overflow: hidden;
+  position: relative; /* Para que esté por encima del video */
+  height: 800px;
+}
+
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+
+.content-wrapper{
+  display: flex; /* Se adapta al espacio disponible */
+
+  padding: 6.3rem 20px 3.5rem 20px; /* top, right, bottom, left */
   gap: 2rem; /* Añade espacio entre la imagen y el contenido */
   flex-wrap: wrap; /* Asegura que el contenido y la imagen se ajusten cuando el tamaño de la pantalla cambie */
-  background-image: url('@/assets/calendar-back.png'); /* tu imagen de fondo */
+  max-width: 1500px;
+  max-height: 800px;
+  margin: 0 auto;
+
 }
+
 
 .presentation-content {
   max-width: 50%;

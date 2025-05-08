@@ -41,11 +41,12 @@ export default {
 
 <style scoped>
 
-
 .products-section {
   padding: 3rem 2rem;
   text-align: center;
   background-color: #fafafa;
+  width: 100vw;
+
 }
 
 .products-section h2 {

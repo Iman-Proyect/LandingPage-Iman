@@ -51,10 +51,10 @@ export default {
       <!-- Navegación -->
       <nav :class="['nav', { open: isMenuOpen }]">
         <router-link @click="closeMenu" :to="{ path: '/', hash: '#presentation' }">Inicio</router-link>
+        <router-link @click="closeMenu" :to="{ path: '/', hash: '#check-features' }">Caracteristicas</router-link>
         <router-link @click="closeMenu" :to="{ path: '/', hash: '#products' }">Productos</router-link>
-        <router-link @click="closeMenu" :to="{ path: '/', hash: '#check-features' }">Personalización</router-link>
         <router-link @click="closeMenu" :to="{ path: '/', hash: '#calendar' }">Agenda</router-link>
-        <router-link @click="closeMenu" :to="{ path: '/', hash: '#contacts' }">Contacto</router-link>
+        <router-link @click="closeMenu" :to="{ path: '/', hash: '#footer' }">Contacto</router-link>
       </nav>
     </div>
   </header>

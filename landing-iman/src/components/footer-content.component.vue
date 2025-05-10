@@ -20,7 +20,7 @@ export default {
 </script>
 
 <template>
-  <section class="footer-section">
+  <section id="footer" class="footer-section">
     <div class="content-wrapper">
       <div class="info-content">
         <h3>info@example.com</h3>

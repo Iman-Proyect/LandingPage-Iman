@@ -24,15 +24,19 @@ jobs:
           node-version: '18.x'
 
       - name: Install dependencies
-        run: npm install
+        run: |
+           cd landing-iman
+            npm install
 
       - name: Build project
-        run: npm run build
+        run: |
+           cd landing-iman
+           npm run build
 
       - name: Upload dist to artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path:  ./landing-iman/dist
 
   deploy:
     runs-on: ubuntu-latest

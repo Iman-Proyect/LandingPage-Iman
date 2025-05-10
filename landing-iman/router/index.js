@@ -21,7 +21,7 @@ const router = createRouter({
             const target = document.querySelector(to.hash);
 
             if (target) {
-                const top = target.offsetTop - headerHeight;
+                const top = target.offsetTop - headerHeight + 1;
                 // Devuelve el desplazamiento con la propiedad `top`
                 return { top, behavior: 'smooth' };
             }

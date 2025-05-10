@@ -72,14 +72,8 @@ export default {
 
 }
 
-a {
-  text-decoration: none;
-  color: #ffffff;
-}
 
 .logo {
-  height: 75px;
-  width: 75px;
   font-weight: bold;
   font-size: 1.5rem;
   gap: 18rem;
@@ -97,28 +91,29 @@ a {
 .header {
   overflow: hidden;
   position: fixed;
+  height: 66px;
   top: 0; /* Se queda pegado al tope al hacer scroll */
   width: 100%;
   z-index: 1000; /* asegúrate de que esté por encima del resto */
   background-color: transparent; /* importante para que no sea transparente */
   transition: background-color 0.09s ease, transform 0.09s ease;
-  margin: 0 auto;
+  padding: 0 16px 0 24px ;
 }
 
 .container {
   display: flex;
-  width: 100%;
+  width: 100%; /* Necesario para los margenes laterales, tienes que quitar el padding de los laterales */
   height: 100%;
   max-width: 1500px;
   align-items: center;
   justify-content: space-between; /* Distribuye espacio uniformemente */
-  margin: 0 auto; /* Centro horizontal */
+  margin: 0 auto; /* Importante para tener margenes hasta el limite lateral de la pantalla, y asegurarse de que en los commponentes padres no hay limitaciones de max-widht */  /* Necesario para los margenes laterales, tienes que quitar el padding de los laterales */
   background-color: transparent;
-  padding: 0 20px 0 20px ;
+
 }
 
 .header.scrolled {
-  background-color: #014e4c;
+  background-color: #034846;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transform: translateY(0);
 }
@@ -178,14 +173,14 @@ a {
     display: none; /* oculto por defecto */
   }
   .header{
-    height: 80px;
-    background-color: #014e4c;
+    height: 82px;
+    background-color: #034846;
   }
 }
 
 @media (max-width: 756px) {
   .header{
-    height: 54px;
+    height: 50px;
   }
 
   .hamburger {

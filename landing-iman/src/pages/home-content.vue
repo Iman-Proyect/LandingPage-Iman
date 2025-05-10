@@ -2,12 +2,14 @@
 import PresentationContent from "@/components/presentation-content.component.vue";
 import ProductsContent from "@/components/products-content.component.vue";
 import CheckFeatures from "@/components/check-features.component.vue";
-import CalendarPersonalized from "@/components/calendar-personalized.component.vue";
+import CalendarPersonalized from "@/components/calendar-personalized2.component.vue";
+import FooterContent from "@/components/footer-content.component.vue";
+
 
 
 export default {
   name: "home-content",
-  components: {CalendarPersonalized, CheckFeatures, ProductsContent, PresentationContent},
+  components: {FooterContent, CalendarPersonalized, CheckFeatures, ProductsContent, PresentationContent},
 }
 </script>
 
@@ -16,6 +18,9 @@ export default {
     <presentation-content></presentation-content>
   </section>
 
+  <section id="check-features">
+    <check-features></check-features>
+  </section>
 
   <section id="products">
     <products-content></products-content>
@@ -25,12 +30,8 @@ export default {
     <calendar-personalized></calendar-personalized>
   </section>
 
-  <section id="check-features">
-    <check-features></check-features>
-  </section>
-
-  <section id="contacts">
-
+  <section id="footer">
+    <footer-content></footer-content>
   </section>
 </template>
 

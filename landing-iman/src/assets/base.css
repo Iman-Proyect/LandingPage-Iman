@@ -8,7 +8,7 @@
   --vt-c-black-soft: #222222;
   --vt-c-black-mute: #282828;
 
-  --vt-c-indigo: #ffffff;
+  --vt-c-indigo: #181818;
 
   --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
   --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
@@ -69,7 +69,7 @@ body {
   font-family:
     Inter,
     -apple-system,
-    BlinkMacSystemFont,
+    sans-serif,
     'Segoe UI',
     Roboto,
     Oxygen,

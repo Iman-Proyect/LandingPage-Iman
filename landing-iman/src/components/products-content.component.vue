@@ -23,18 +23,20 @@ export default {
 
 <template>
   <section id="products" class="products-section">
-    <h2>¿Por qué elegir nuestros imanes?</h2>
+    <div class="content-wrapper">
+      <!--<h1>¿Por qué elegir nuestros imanes?</h1>-->
+      <h1>Nuestros imanes</h1>
 
-    <!-- <ul class="benefits">
-       <li>📸 Personalización total con tus fotos</li>
-       <li>🎁 Ideal para regalos únicos</li>
-       <li>🧲 Alta calidad y durabilidad</li>
-       <li>🚚 Envíos rápidos y seguros</li>
-     </ul>-->
+      <!-- <ul class="benefits">
+         <li>📸 Personalización total con tus fotos</li>
+         <li>🎁 Ideal para regalos únicos</li>
+         <li>🧲 Alta calidad y durabilidad</li>
+         <li>🚚 Envíos rápidos y seguros</li>
+       </ul>-->
 
 
       <product-list :products="products"></product-list>
-
+    </div>
   </section>
 
 </template>
@@ -42,11 +44,31 @@ export default {
 <style scoped>
 
 .products-section {
-  padding: 3rem 2rem;
-  text-align: center;
-  background-color: #fafafa;
-  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  height: 855px;
+  background-color: #0e7676;
+}
 
+.products-section h1{
+  color: #023f3d;
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 70px;
+
+}
+
+.content-wrapper{
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 0px 20px 0px; /* top, right, bottom, left */
+  height: 100%;
+  width: 95%; /* Necesario para los margenes laterales, tienes que quitar el padding de los laterales */
+  max-width: 1500px;
+  margin: 0 auto; /* Importante para tener margenes hasta el limite lateral de la pantalla, y asegurarse de que en los commponentes padres no hay limitaciones de max-widht */  /* Necesario para los margenes laterales, tienes que quitar el padding de los laterales */
+  z-index: 1; /* Por encima del background */
+  overflow: hidden; /* Evita desbordamiento */
 }
 
 .products-section h2 {
@@ -54,29 +76,6 @@ export default {
   margin-bottom: 1.5rem;
 }
 
-.benefits {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 2rem;
-}
 
-.benefits li {
-  font-size: 1.1rem;
-  margin: 0.5rem 0;
-}
-
-.magnet-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1.5rem;
-}
-
-.magnet-item img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
 
 </style>

@@ -1,0 +1,48 @@
+name: Deploy Vue.js App to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'
+
+      - name: Install dependencies
+        run: |
+           cd landing-iman
+            npm install
+
+      - name: Build project
+        run: |
+           cd landing-iman
+           npm run build
+
+      - name: Upload dist to artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path:  ./landing-iman/dist
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,5 +1,5 @@
 <script>
-import backGroundPresentation from '@/assets/BackgroundPresentation.mp4';
+import backGroundPresentation from '@/assets/BackGroundPresentation.mp4';
 import { gsap } from "gsap";
 
 export default {

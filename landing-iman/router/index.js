@@ -12,7 +12,7 @@ const routes = [
 ]
 
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHistory('/LandingPage-Iman/'),
     routes,
     scrollBehavior(to) {
         if (to.hash) {

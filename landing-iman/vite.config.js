@@ -10,7 +10,7 @@ export default defineConfig({
     vue(),
     vueDevTools(),
   ],
-  base:'https://Iman-Proyect.github.io/LandingPage-Iman/',
+  base:'https://Iman-Proyect.github.io/landing-iman/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

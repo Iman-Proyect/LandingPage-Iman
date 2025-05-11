@@ -20,21 +20,21 @@ export default {
 
     // Aplica la animación al inicio
     // Establece la posición inicial sin animación
-    gsap.set(contentTextPresentation, { x: -200, opacity: 0 });
+    gsap.set(contentTextPresentation, { x: -100, opacity: 0 });
 
 
 
     //aplica animacion de acuerdo al cambio del tamano de la pantalla (474px)
     mm.add("(max-width: 473px)", () => {
       // Establece la posición inicial sin animación
-      gsap.set(contentTextPresentation, { x: -200, opacity: 0 });
+      gsap.set(contentTextPresentation, { x: -100, opacity: 0 });
 
       gsap.to(
           contentTextPresentation,
           {
             opacity: 1,
             x: 0,
-            duration: 0.5,
+            duration: 0.85,
             overwrite: true // Evita conflictos de animación
           }
       );
@@ -42,14 +42,14 @@ export default {
 
     mm.add("(min-width: 474px)", () => {
       // Establece la posición inicial sin animación
-      gsap.set(contentTextPresentation, { x: -200, opacity: 0 });
+      gsap.set(contentTextPresentation, { x: -100, opacity: 0 });
 
       gsap.to(
           contentTextPresentation,
           {
             opacity: 1,
             x: 0,
-            duration: 0.5,
+            duration: 0.85,
             overwrite: true // Evita conflictos de animación
           }
       );
@@ -58,14 +58,14 @@ export default {
     //aplica animacion de acuerdo al cambio del tamano de la pantalla (474px)
     mm.add("(max-width: 756px)", () => {
       // Establece la posición inicial sin animación
-      gsap.set(contentTextPresentation, { x: -200, opacity: 0 });
+      gsap.set(contentTextPresentation, { x: -100, opacity: 0 });
 
       gsap.to(
           contentTextPresentation,
           {
             opacity: 1,
             x: 0,
-            duration: 0.5,
+            duration: 0.85,
             overwrite: true // Evita conflictos de animación
           }
       );
@@ -73,14 +73,14 @@ export default {
 
     mm.add("(min-width: 757px)", () => {
       // Establece la posición inicial sin animación
-      gsap.set(contentTextPresentation, { x: -200, opacity: 0 });
+      gsap.set(contentTextPresentation, { x: -100, opacity: 0 });
 
       gsap.to(
           contentTextPresentation,
           {
             opacity: 1,
             x: 0,
-            duration: 0.5,
+            duration: 0.85,
             overwrite: true // Evita conflictos de animación
           }
       );
@@ -89,14 +89,14 @@ export default {
     //aplica animacion de acuerdo al cambio del tamano de la pantalla (474px)
     mm.add("(max-width: 1000px)", () => {
       // Establece la posición inicial sin animación
-      gsap.set(contentTextPresentation, { x: -200, opacity: 0 });
+      gsap.set(contentTextPresentation, { x: -100, opacity: 0 });
 
       gsap.to(
           contentTextPresentation,
           {
             opacity: 1,
             x: 0,
-            duration: 0.5,
+            duration: 0.85,
             overwrite: true // Evita conflictos de animación
           }
       );
@@ -106,14 +106,14 @@ export default {
      // mm.revert(); // Limpia animaciones previas
 
       // Establece la posición inicial sin animación
-      gsap.set(contentTextPresentation, { x: -200, opacity: 0 });
+      gsap.set(contentTextPresentation, { x: -100, opacity: 0 });
 
       gsap.to(
           contentTextPresentation,
           {
             opacity: 1,
             x: 0,
-            duration: 0.5,
+            duration: 0.85,
             overwrite: true // Evita conflictos de animación
           }
       );
